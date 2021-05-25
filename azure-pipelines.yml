@@ -29,7 +29,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
-    SourceFolder: 'src/Apps/platypus_app/build/ios'
+    SourceFolder: './ios'
     TargetFolder: '$(build.artifactstagingdirectory)'    
 #- task: PublishPipelineArtifact@1
 #  displayName: 'Publish Pipeline Artifact'
