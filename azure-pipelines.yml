@@ -26,3 +26,13 @@ steps:
     target: 'ios'
     projectDirectory: '.'
     iosTargetPlatform: 'simulator'
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    SourceFolder: 'src/Apps/platypus_app/build/ios'
+    TargetFolder: '$(build.artifactstagingdirectory)'    
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Pipeline Artifact'
+  inputs:
+    targetPath: '$(build.artifactstagingdirectory)'
+    artifact: 'platypus_drop'    
