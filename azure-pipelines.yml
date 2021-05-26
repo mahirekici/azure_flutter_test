@@ -35,4 +35,8 @@ steps:
 #  displayName: 'Publish Pipeline Artifact'
 #  inputs:
 #    targetPath: '$(build.artifactstagingdirectory)'
-#    artifact: 'platypus_drop'    
+#    artifact: 'platypus_drop'  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'flutter_azurr_artifact'
